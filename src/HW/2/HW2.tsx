@@ -47,9 +47,7 @@ export const HW2 = () => {
   let [currentUsers, setCurrentUsers] = useState<UsersObjectType>(users);
 
   const filterUsers = () => {
-    //const filteredUsers = 'НУЖНО ПРОФИЛЬТРОВАТЬ ДРУЗЕЙ. ОСТАВЛЯЕМ ТОЛЬКО ТЕХ, КОТОРЫЕ ЖИВУТ В ГОРОДЕ LOS ANGELES';
     const filteredUsers = users.myFriends.filter((friend) => friend.address.city === 'Los Angeles')
-
     setCurrentUsers({...users, myFriends: filteredUsers});
 
 
@@ -58,12 +56,7 @@ export const HW2 = () => {
 
 
   const handleAdd = () => {
-    const newFriend: UserType = {
-      id: 9090,
-      name: 'bob',
-      age: 32,
-      address: { street: 'sadsd', city: 'dsadads'}
-    }
+    const newFriend: UserType = { id: 9090,  name: 'bob',  age: 32,  address: { street: 'sadsd', city: 'dsadads'}}
     setCurrentUsers({...users, myFriends: [...users.myFriends, newFriend]})
   }
 
